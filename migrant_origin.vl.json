@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Country of Birth of Australian Residents (June 2024)",
+  "title": "Tooltip: Hover over country to see percentage and number of people born overseas",
   "width": 1700,
   "height": 800,
   "projection": {"type": "equalEarth"},
@@ -38,6 +38,7 @@
   },
   "config": {}
 }
+
 
 
 
