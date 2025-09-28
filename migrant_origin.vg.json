@@ -35,5 +35,7 @@
       {"field": "Count_2024_num", "type": "quantitative", "title": "No. of migrants","format":","},
       {"field": "Share_OB", "type": "quantitative", "title": "Percentage"}
     ]
-  }
+  },
+  "config": {}
 }
+
