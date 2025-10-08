@@ -1,0 +1,114 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "Migrant in each state by year",
+  "width": 800,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/angu0160/3179/main/Homework%2010/data/migration%20by%20state.csv"
+  },
+  "params": [
+    {
+      "name": "stateSel",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "labels": [
+          "Show all",
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "name": "Select State/Territory: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "stateSel == null || datum['State/Territory'] == stateSel"}
+  ],
+  "layer": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "timeUnit": "year",
+          "field": "Year",
+          "type": "quantitative",
+          "axis": {"format": "%Y"}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "Migrants",
+          "type": "quantitative",
+          "title": "Number of Migrants"
+        },
+        "color": {
+          "field": "State/Territory",
+          "type": "nominal",
+          "scale": {"scheme": "category20b"},
+          "title": "State/Territory"
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "title": "Year",
+            "format": "%Y"
+          },
+          {
+            "field": "State/Territory",
+            "type": "nominal",
+            "title": "State/Territory"
+          },
+          {
+            "field": "Migrants",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "title": "Migrants",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "indexof([2004, 2022, 2023], year(datum.Year)) >= 0"}
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -10,
+        "fontSize": 11,
+        "fontWeight": "normal",
+        "stroke": "black",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {"timeUnit": "year", "field": "Year", "type": "quantitative"},
+        "y": {"aggregate": "sum", "field": "Migrants", "type": "quantitative"},
+        "text": {
+          "field": "Year",
+          "type": "temporal",
+          "timeUnit": "year",
+          "format": "%Y"
+        },
+        "color": {"value": "black"}
+      }
+    }
+  ],
+  "config": {}
+}
