@@ -12,7 +12,7 @@
     {
       "lookup": "properties.NAME",
       "from": {
-        "data": {"url": "https://raw.githubusercontent.com/angu0160/3179/main/Homework%209/data/data/abs_cob_2024.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/angu0160/3179/main/data/data/abs_cob_2024.csv"},
         "key": "Country",
         "fields": ["Count_2024", "Share_OB"]
       }
@@ -38,6 +38,7 @@
   },
   "config": {}
 }
+
 
 
 
