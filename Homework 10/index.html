@@ -21,21 +21,24 @@
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
-
+<style>
+    body { font-family: 'Open Sans', sans-serif; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .vis-container { margin: 24px 0; } /* space between charts */
+  </style>
 </head>
 
 <body>
 
   <div class="page">
 
-    <!-- pure grid group -->
+    <!-- Header -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Homework Week 10</h1>
         <p>Task 2</p>
       </div>
     </div>
-    <!-- end pure grid group -->
 
     <!-- Vis 1 -->
     <div class="pure-g">
@@ -51,9 +54,7 @@
         <div id="vis2" class="vis-container"></div>
       </div>
     </div>
-
 </div>
-  <!-- end pure grid group -->
 
   <script type="text/javascript">
     var specVis1 = "./migrant_origin.vl.json";
@@ -64,4 +65,5 @@
   </script>
 </body>
 </html>
+
 
