@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Top 7 langauges spoken at home in Australia excludign english 2021",
+  "data": {
+    "values": [
+      {"category": "Greek", "value": 229643},
+      {"category": "Italian", "value": 228042},
+      {"category": "Arabic", "value": 367159},
+      {"category": "Punjabi", "value": 239033},
+      {"category": "Vietnamese", "value": 320758},
+      {"category": "Mandarin", "value": 685274},
+      {"category": "Cantonese", "value": 295281}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 100},
+      "encoding": {
+        "theta": {"field": "value", "type": "quantitative"},
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Greek",
+              "Italian",
+              "Arabic",
+              "Punjabi",
+              "Vietnamese",
+              "Mandarin",
+              "Cantonese"
+            ],
+            "range": [
+              "#7fc97f",
+              "#beaed4",
+              "#fdc086",
+              "#ffff99",
+              "#386cb0",
+              "#f0027f",
+              "#bf5b17"
+            ]
+          },
+          "legend": {"title": "Langauges"}
+        },
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Language"},
+          {
+            "field": "value",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "title": "Number of speakers",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}

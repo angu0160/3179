@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Top 10 Migrant Occupations in Australia 2023-24",
+  "data": {
+    "values": [
+      {"category": "Registered Nurse", "value": 9813},
+      {"category": "Accountants", "value": 4570},
+      {"category": "Software and Applications Programmer", "value": 4243},
+      {"category": "Chefs", "value": 3957},
+      {
+        "category": "Industrial, Mechanical and Production Engineers",
+        "value": 2509
+      },
+      {"category": "Civil Engineering Professionals", "value": 2380},
+      {"category": "ICT Business and Systems Analysts", "value": 2232},
+      {"category": "Other Engineering Professions", "value": 1556},
+      {"category": "Early Childhood Teachers", "value": 1429},
+      {"category": "Motor Mechanics", "value": 1319}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 100},
+      "encoding": {
+        "theta": {"field": "value", "type": "quantitative"},
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Registered Nurse",
+              "Accountants",
+              "Software and Applications Programmer",
+              "Chefs",
+              "Industrial, Mechanical and Production Engineers",
+              "Civil Engineering Professionals",
+              "ICT Business and Systems Analysts",
+              "Other Engineering Professions",
+              "Early Childhood Teachers",
+              "Motor Mechanics"
+            ],
+            "range": [
+              "#8dd3c7",
+              "#ffffb3",
+              "#bebada",
+              "#fb8072",
+              "#80b1d3",
+              "#fdb462",
+              "#b3de69",
+              "#fccde5",
+              "#d9d9d9",
+              "#bc80bd"
+            ]
+          },
+          "legend": {"title": "Occupations"}
+        },
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Occupantion"},
+          {
+            "field": "value",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "title": "Occupants",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Migration Stream into Australia 2023-24",
+  "data": {
+    "values": [
+      {"category": "Skill Stream", "value": 137100},
+      {"category": "Family Stream", "value": 52720},
+      {"category": "Special Eligibility Stream", "value": 180}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 100},
+      "encoding": {
+        "theta": {"field": "value", "type": "quantitative"},
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Skill Stream",
+              "Family Stream",
+              "Special Eligibility Stream"
+            ],
+            "range": ["#a6cee3", "#1f78b4", "#b2df8a"]
+          },
+          "legend": {"title": "Streams"}
+        },
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Stream"},
+          {
+            "field": "value",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "title": "Number of applicants",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
