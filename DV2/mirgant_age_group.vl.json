@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Migrants in Australia by age group",
+  "width": 400,
+  "height": 200,
+  "data": {
+    "values": [
+      {"category": "0-9", "amount": 59390},
+      {"category": "10-19", "amount": 89610},
+      {"category": "20-29", "amount": 272180},
+      {"category": "30-39", "amount": 132930},
+      {"category": "40-49", "amount": 51580},
+      {"category": "50-59", "amount": 26090},
+      {"category": "60-69", "amount": 22560},
+      {"category": ">=70", "amount": 12480}
+    ]
+  },
+  "params": [
+    {
+      "name": "highlight",
+      "select": {
+        "type": "point",
+        "fields": ["category"],
+        "on": "pointerover",
+        "clear": "pointerout"
+      }
+    }
+  ],
+  "mark": {"type": "bar", "tooltip": true},
+  "encoding": {
+    "x": {
+      "field": "category",
+      "type": "nominal",
+      "axis": {"title": "Age Group"}
+    },
+    "y": {
+      "field": "amount",
+      "type": "quantitative",
+      "axis": {"title": "Number of Migrants"}
+    },
+    "color": {
+      "condition": {"param": "highlight", "value": "steelblue"},
+      "value": "grey"
+    }
+  },
+  "config": {
+    "bar": {"binSpacing": 0},
+    "scale": {"bandPaddingInner": 0.05, "bandPaddingOuter": 0.05}
+  }
+}
