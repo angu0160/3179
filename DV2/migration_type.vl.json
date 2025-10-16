@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Migration Stream into Australia 2023-24",
+  "width": 300,
+  "height": 300,
   "data": {
     "values": [
       {"category": "Skill Stream", "value": 137100},
