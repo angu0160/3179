@@ -1,9 +1,11 @@
+body{background:#d9d9d9;margin:0}
 body *{
     font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
     font-weight: 900;
+    margin: 16px 0 8px;
 }
 
 body {
@@ -13,14 +15,15 @@ body {
 .page {
     width: 90%;
     max-width: 1400px;
-    background-color: white;
-    margin: auto;
-    padding: 50px;
-    padding-top: 35px;
+    background:#fff;
+    margin: 24px auto 60px;
+    padding: 36px 48px;
+    box-sizing: border-box;
 }
 
 .vis-container {
     width: 100%;
+    min-height:380px;
 }
 
 .description h2,
