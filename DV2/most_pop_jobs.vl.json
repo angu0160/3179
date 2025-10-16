@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Top 10 Migrant Occupations in Australia 2023-24",
-  "width": 300,
-  "height": 300,
+  "width": 150,
+  "height": 150,
   "data": {
     "values": [
       {"category": "Registered Nurse", "value": 9813},
