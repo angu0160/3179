@@ -16,7 +16,7 @@
   },
   "layer": [
     {
-      "mark": {"type": "arc", "innerRadius": 100},
+      "mark": {"type": "arc", "innerRadius": 80},
       "encoding": {
         "theta": {"field": "value", "type": "quantitative"},
         "color": {
