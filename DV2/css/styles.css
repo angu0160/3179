@@ -23,7 +23,7 @@ body {
 
 .vis-container {
     width: 100%;
-    min-height:380px;
+    min-height:400px;
 }
 
 .description h2,
@@ -40,6 +40,9 @@ h1 {
 }
 
 .pure-g {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin-bottom: 40px;
 }
 
