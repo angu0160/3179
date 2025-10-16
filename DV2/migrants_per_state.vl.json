@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": "Migrant in each state by year",
-  "width": 250,
-  "height": 100,
+  "width": 500,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/angu0160/3179/main/DV2/data/migration%20by%20state.csv"
   },
