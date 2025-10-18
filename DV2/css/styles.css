@@ -1,52 +1,80 @@
-body{background:#d9d9d9;margin:0}
-body *{
-    font-family: 'Open Sans', sans-serif;
+/* ===== Base ===== */
+:root{
+  --bg:#d9d9d9;
+  --card:#ffffff;
+  --ink:#1e2732;
+  --muted:#6a7480;
+  --ring:#e7edf3;
+  --shadow:0 8px 28px rgba(20,30,55,.08);
+  --r:16px;
+  --space:24px;
+  --max:1400px;
+  --font:'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-h1 {
-    font-weight: 900;
-    margin: 16px 0 8px;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font);
 }
 
-body {
-    background-color: lightgray;
+h1{font-weight:900;margin:16px 0 8px}
+h2{margin:0 0 12px}
+
+/* ===== Page Wrapper ===== */
+.page{
+  width:90%;
+  max-width:var(--max);
+  background:var(--card);
+  margin:24px auto 60px;
+  padding:36px 48px;
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
 }
 
-.page {
-    width: 90%;
-    max-width: 1400px;
-    background:#fff;
-    margin: 24px auto 60px;
-    padding: 36px 48px;
-    box-sizing: border-box;
+/* ===== Generic Card ===== */
+.card{
+  background:#fff;
+  border:1px solid var(--ring);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:calc(var(--space) * 1.1);
+  margin:20px 0;
 }
 
-.vis-container {
-    width: 100%;
-    min-height:400px;
+.small-font{font-size:14px;margin-top:-5px}
+.description-right{padding-left:20px}
+.description-left{padding-right:20px}
+
+/* ===== Visualisation Containers ===== */
+.vis-container{
+  width:100%;
+  min-height:400px;           /* adjust to your charts */
+  background:#f7fafc;         /* optional soft bg */
+  border:1px solid var(--ring);
+  border-radius:12px;
+  padding:12px;
 }
 
-.description h2,
-h1 {
-    margin-top: 0px;
+/* ===== Inner Grids ===== */
+.card-grid{
+  display:grid;
+  gap:18px;
+}
+@media (min-width:900px){
+  .card-grid{grid-template-columns:1.6fr 1fr} /* chart : text */
 }
 
-.description-right {
-    padding-left: 20px;
+.two-up{
+  display:grid;
+  gap:18px;
+}
+@media (min-width:900px){
+  .two-up{grid-template-columns:1fr 1fr}
 }
 
-.description-left {
-    padding-right: 20px;
-}
-
-.pure-g {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.small-font {
-    font-size: 14px;
-    margin-top: -5px;
-}
+/* ===== Avoid overriding external grids (e.g., Pure.css) ===== */
+/* Do not redefine .pure-g; use the custom grids above instead. */
