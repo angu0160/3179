@@ -76,5 +76,36 @@ h2{margin:0 0 12px}
   .two-up{grid-template-columns:1fr 1fr}
 }
 
+/* 3-up grid: stacks on mobile, 3 columns on desktop */
+.three-up{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin: 20px 0;
+}
+@media (min-width: 900px){
+  .three-up{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Each column = chart + note */
+.chart-block{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* Optional: donut-specific min-height */
+.vis-container.donut{ min-height: 260px; }
+
+/* Note box under each chart */
+.note-card{
+  background:#f7fafc;
+  border:1px solid #e7edf3;     /* match your --ring if using vars */
+  border-radius:12px;
+  padding:12px 14px;
+  color:#6a7480;                 /* muted text */
+  font-size: 0.95rem;
+}
+.note-card p{ margin:0; }
 /* ===== Avoid overriding external grids (e.g., Pure.css) ===== */
 /* Do not redefine .pure-g; use the custom grids above instead. */
