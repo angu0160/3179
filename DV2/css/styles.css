@@ -85,7 +85,7 @@ h2{margin:0 0 12px}
 /* Each column = chart + note */
 .chart-block{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 12px;
 }
 
