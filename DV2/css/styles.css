@@ -35,16 +35,6 @@ h2{margin:0 0 12px}
   box-shadow:var(--shadow);
 }
 
-/* ===== Generic Card ===== */
-.card{
-  background:#fff;
-  border:1px solid var(--ring);
-  border-radius:var(--r);
-  box-shadow:var(--shadow);
-  padding:calc(var(--space) * 1.1);
-  margin:20px 0;
-}
-
 .small-font{font-size:14px;margin-top:-5px}
 .description-right{padding-left:20px}
 .description-left{padding-right:20px}
@@ -96,11 +86,11 @@ h2{margin:0 0 12px}
 
 /* Note box */
 .note-card{
-  background:#141414;
-  border:1px solid #cf0d0d;
+  background:#b6b5b5;
+  border:1px solid #b6b5b5;
   border-radius:12px;
   padding:12px 14px;
-  color:#1174ee;
+  color:#000000;
   font-size:0.95rem;
 }
 .note-card p{ margin:0; }
