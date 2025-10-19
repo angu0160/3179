@@ -26,6 +26,8 @@
   
 <body>
 
+  <div class="grid-container">
+  
   <header class="dash-header">
   <div class="wrap">
     <h1 style="text-align: center;">Migration in Australia</h1>
@@ -42,58 +44,48 @@
     </section>
     
     <!-- Vis 1 -->
-    <section class="card hero">
+    <div class="box" style="grid-area: box-1"></div>
       <h2>Origins of Migrants</h2>
         <div id="vis1" class="viz"></div>
-        <figcaption class="figcaption">
         <p>Above is a choropleth map depicting Australia’s overseas born population. The key regions are the United Kingdom, New Zealand, 
           the US and Canada being the main English speaking countries. In Asia, countries like China, India and the Philippines 
           and in Southeast Asia like Vietnam, Indonesia and Malaysia. Overall, the migration distribution has a predominant Asia Pacific 
           centred migration pattern signifying Australia’s strong diversity and cultural differences.</p>
-          </figcaption>
-    </section>
   
     
-     <!-- Vis 2,3,4-->
-  <section class="flex-row donut-row">
-    <div class="card donut-card">
+     <!-- Vis 2,3,4 (donut) -->
+  <div class="box" style="grid-area: box-2"></div>
       <h3>Migration Stream</h3>
     <div id="vis2" class="vis-container donut"></div>
       <p class="note">Australia’s migration profile highlights a skilled, diverse, and globally connected population. 
             Most new arrivals in 2023–24 entered through the Skill Stream, while the Family Stream came as the second most popular migration stream.</p>
-  </div>
 
-  <div class="card donut-card">
+  <div class="box" style="grid-area: box-3"></div>
     <h3>Top Occupations</h3>
     <div id="vis3" class="vis-container donut"></div>
       <p class="note"> The leading migrant occupations such as registered nurses, accountants, software developers, and engineers which shows Australia’s 
             strong demand in healthcare, technology, and infrastructure sectors.</p>
-  </div>
 
-  <div class="card donut-card">
+  <div class="box" style="grid-area: box-4"></div>
     <h3>Top languages spoken</h3>
     <div id="vis4" class="vis-container donut"></div>
       <p class="note">Linguistically, Australia remains highly multicultural, with Mandarin, Arabic, Vietnamese, Cantonese, Punjabi, Italian, and Greek 
             among the top languages spoken at home other than English. Together, these trends demonstrate Australia’s reliance on skilled migration, 
             its expanding cultural diversity, and its deepening ties to the Asia-Pacific region.</p>
-    </div>
-  </section>
+
 
     <!-- Vis 5 -->
-    <section class="flex-row bottom-row">
-      <div class="card viz-card">
+    <<div class="box" style="grid-area: box-5"></div>
         <h3>Migrants by State Over Time</h3>
         <div id="vis5" class="vis-container"></div>
         <p class="note">explaination of area chart</p>
-    </div>
 
   <!-- Vis 6 -->
-    <div class="card viz-card">
+    <div class="box" style="grid-area: box-6"></div>
       <h3>Migrant age group Distribution</h3>
         <div id="vis6" class="vis-container"></div>
         <p>explaination of bar chart</p>
     </div>
-    </section>
   
   <script type="text/javascript">
     var specVis1 = "./migrant_origin.vl.json";

@@ -9,25 +9,30 @@
   --gap:18px;
   --max:1100px;
   --font:'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+body{
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.box{
+  background-color: #fff;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px 300px;
+  grid-auto-rows: 1fr;
+  gap: 1em;
+  grid-template-areas:
+  "box-1 box-1 box-1"
+  "box-2 box-3 box-4"
+  "box-5 box-5 box-5"
+  "box-6 box-6 box-6";
 }
 
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);}
-
-/* page container */
-.wrap{max-width:var(--max);margin:24px auto 60px;padding:0 20px}
-
-/* generic card */
-.card{
-  background:var(--card);
-  border:1px solid var(--ring);
-  border-radius:var(--r);
-  box-shadow:var(--shadow);
-  padding:22px;
-  margin:20px 0;
-}
-
-/* optional: slightly different look for text-only intro cards */
 .card.intro {
   padding: 18px 22px;
 }
@@ -40,48 +45,5 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);}
   color: var(--muted, #6a7480);
   line-height: 1.55;
   font-size: 0.98rem;
-  text-align: center;          /* center the intro text */
+  text-align: center;
 }
-
-/* hero map card (Trade Flow style) */
-.hero{
-  padding:26px;
-}
-.hero h2{margin:0 0 4px;font-size:1.2rem}
-.eyebrow{margin:0 0 14px;color:var(--muted);font-size:.92rem}
-.figure{margin:0}
-.figure .viz{width:100%;min-height:420px;border-radius:12px}
-.figcaption{margin-top:12px;color:var(--muted);font-size:.9rem}
-
-/* stacked sections header */
-.section-title{margin:4px 0 14px;font-size:1.15rem}
-.section-note{margin:-8px 0 14px;color:var(--muted);font-size:.95rem}
-
-/* chart-only card */
-.viz{width:100%;min-height:300px;border-radius:12px}
-
-/* chart + notes (transport-style) */
-.card-grid{display:grid;gap:var(--gap)}
-@media (min-width: 900px){
-  .card-grid{grid-template-columns:1.6fr 1fr} /* chart : notes */
-}
-
-/* three donuts in a row */
-.three-up{display:grid;gap:var(--gap)}
-@media (min-width: 900px){
-  .three-up{grid-template-columns:repeat(3,1fr)}
-}
-
-/* soft text box */
-.prose{
-  background:#f7fafc;
-  border:1px solid var(--ring);
-  border-radius:12px;
-  padding:14px 16px;
-  color:var(--muted);
-  line-height:1.55;
-  font-size:.95rem;
-}
-
-/* spacing helper for small captions */
-.small{font-size:.9rem;color:var(--muted)}
