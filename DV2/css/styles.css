@@ -1,66 +1,87 @@
 :root{
   --bg:#eef2f6;
   --card:#fff;
-  --ring:#e6ebf2;
+  --ink:#1e2732;
+  --muted:#6a7480;
+  --ring:#e7edf3;
   --shadow:0 8px 28px rgba(20,30,55,.08);
   --r:14px;
   --gap:18px;
-  --max:1200px;
+  --max:1100px;
   --font:'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);font-family:var(--font);color:#1f2630}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);}
 
-/* Page wrapper */
-.page{
-  width:90%;
-  max-width:var(--max);
-  margin:24px auto 60px;
-}
+/* page container */
+.wrap{max-width:var(--max);margin:24px auto 60px;padding:0 20px}
 
-/* Card look */
+/* generic card */
 .card{
   background:var(--card);
   border:1px solid var(--ring);
   border-radius:var(--r);
   box-shadow:var(--shadow);
-  padding:18px;
+  padding:22px;
+  margin:20px 0;
 }
 
-/* Flex helpers */
-.flex-col{ display:flex; flex-direction:column; gap:var(--gap); }
-.flex-row{ display:flex; flex-wrap:wrap; gap:var(--gap); }
-
-/* Sections */
-.map-box{ /* top: big map */
-  min-height:420px;
+/* optional: slightly different look for text-only intro cards */
+.card.intro {
+  padding: 18px 22px;
+}
+.card.intro h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+.card.intro .lede {
+  margin: 0;
+  color: var(--muted, #6a7480);
+  line-height: 1.55;
+  font-size: 0.98rem;
+  text-align: center;          /* center the intro text */
 }
 
-.donut-row .donut-card{      /* middle: 3 donuts */
-  flex:1 1 0;
-  min-width:280px;           /* allows wrapping on smaller screens */
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+/* hero map card (Trade Flow style) */
+.hero{
+  padding:26px;
+}
+.hero h2{margin:0 0 4px;font-size:1.2rem}
+.eyebrow{margin:0 0 14px;color:var(--muted);font-size:.92rem}
+.figure{margin:0}
+.figure .viz{width:100%;min-height:420px;border-radius:12px}
+.figcaption{margin-top:12px;color:var(--muted);font-size:.9rem}
+
+/* stacked sections header */
+.section-title{margin:4px 0 14px;font-size:1.15rem}
+.section-note{margin:-8px 0 14px;color:var(--muted);font-size:.95rem}
+
+/* chart-only card */
+.viz{width:100%;min-height:300px;border-radius:12px}
+
+/* chart + notes (transport-style) */
+.card-grid{display:grid;gap:var(--gap)}
+@media (min-width: 900px){
+  .card-grid{grid-template-columns:1.6fr 1fr} /* chart : notes */
 }
 
-.bottom-row .viz-card{       /* bottom: 2 visuals */
-  flex:1 1 0;
-  min-width:360px;
+/* three donuts in a row */
+.three-up{display:grid;gap:var(--gap)}
+@media (min-width: 900px){
+  .three-up{grid-template-columns:repeat(3,1fr)}
 }
 
-/* Chart containers */
-.viz{ width:100%; min-height:320px; border-radius:10px; }
-.viz.donut{ min-height:260px; }
-
-/* Optional text box under charts */
-.note{ margin:6px 0 0; color:#5e6773; font-size:.95rem; }
-
-/* Responsive tweaks */
-@media (max-width: 1000px){
-  .viz{ min-height:300px }
+/* soft text box */
+.prose{
+  background:#f7fafc;
+  border:1px solid var(--ring);
+  border-radius:12px;
+  padding:14px 16px;
+  color:var(--muted);
+  line-height:1.55;
+  font-size:.95rem;
 }
-@media (max-width: 720px){
-  .viz{ min-height:260px }
-}
+
+/* spacing helper for small captions */
+.small{font-size:.9rem;color:var(--muted)}
