@@ -53,7 +53,7 @@ h2{margin:0 0 12px}
 .vis-container{
   width:100%;
   min-height:400px;           /* adjust to your charts */
-  background:#f7fafc;         /* optional soft bg */
+  background:#0c1013;         /* optional soft bg */
   border:1px solid var(--ring);
   border-radius:12px;
   padding:12px;
