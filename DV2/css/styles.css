@@ -53,7 +53,7 @@ h2{margin:0 0 12px}
 .vis-container{
   width:100%;
   min-height:400px;           /* adjust to your charts */
-  background:#0c1013;         /* optional soft bg */
+  background:#fff;         /* optional soft bg */
   border:1px solid var(--ring);
   border-radius:12px;
   padding:12px;
@@ -76,7 +76,6 @@ h2{margin:0 0 12px}
   .two-up{grid-template-columns:1fr 1fr}
 }
 
-/* 3-up grid: stacks on mobile, 3 columns on desktop */
 .three-up{
   display: grid;
   grid-template-columns: repeat(3, minmax(240px, 1fr));
@@ -97,11 +96,11 @@ h2{margin:0 0 12px}
 
 /* Note box */
 .note-card{
-  background:#f7fafc;
-  border:1px solid #e7edf3;
+  background:#141414;
+  border:1px solid #cf0d0d;
   border-radius:12px;
   padding:12px 14px;
-  color:#6a7480;
+  color:#1174ee;
   font-size:0.95rem;
 }
 .note-card p{ margin:0; }
