@@ -1,106 +1,66 @@
-/* ===== Base ===== */
 :root{
-  --bg:#d9d9d9;
-  --card:#ffffff;
-  --ink:#1e2732;
-  --muted:#6a7480;
-  --ring:#e7edf3;
+  --bg:#eef2f6;
+  --card:#fff;
+  --ring:#e6ebf2;
   --shadow:0 8px 28px rgba(20,30,55,.08);
-  --r:16px;
-  --space:24px;
-  --max:1400px;
+  --r:14px;
+  --gap:18px;
+  --max:1200px;
   --font:'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--font);
-}
+body{margin:0;background:var(--bg);font-family:var(--font);color:#1f2630}
 
-h1{font-weight:900;margin:16px 0 8px}
-h2{margin:0 0 12px}
-
-/* ===== Page Wrapper ===== */
+/* Page wrapper */
 .page{
   width:90%;
   max-width:var(--max);
-  background:var(--card);
   margin:24px auto 60px;
-  padding:36px 48px;
+}
+
+/* Card look */
+.card{
+  background:var(--card);
+  border:1px solid var(--ring);
   border-radius:var(--r);
   box-shadow:var(--shadow);
+  padding:18px;
 }
 
-.small-font{font-size:14px;margin-top:-5px}
-.description-right{padding-left:20px}
-.description-left{padding-right:20px}
+/* Flex helpers */
+.flex-col{ display:flex; flex-direction:column; gap:var(--gap); }
+.flex-row{ display:flex; flex-wrap:wrap; gap:var(--gap); }
 
-/* ===== Visualisation Containers ===== */
-.vis-container{
-  width:100%;
-  min-height:400px;           /* adjust to your charts */
-  background:#fff;         /* optional soft bg */
-  border:1px solid var(--ring);
-  border-radius:12px;
-  padding:12px;
+/* Sections */
+.map-box{ /* top: big map */
+  min-height:420px;
 }
 
-.vis-box {
-  background: #ffffff;                /* white card background */
-  border: 1px solid #e7edf3;          /* subtle border */
-  border-radius: 12px;                /* rounded corners */
-  box-shadow: 0 6px 20px rgba(20,30,55,0.08); /* soft shadow */
-  padding: 20px;                      /* inner spacing */
-  margin: 20px 0;                     /* space between boxes */
+.donut-row .donut-card{      /* middle: 3 donuts */
+  flex:1 1 0;
+  min-width:280px;           /* allows wrapping on smaller screens */
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-/* ===== Inner Grids ===== */
-.card-grid{
-  display:grid;
-  gap:18px;
-}
-@media (min-width:900px){
-  .card-grid{grid-template-columns:1.6fr 1fr} /* chart : text */
+.bottom-row .viz-card{       /* bottom: 2 visuals */
+  flex:1 1 0;
+  min-width:360px;
 }
 
-.two-up{
-  display:grid;
-  gap:18px;
-}
-@media (min-width:900px){
-  .two-up{grid-template-columns:1fr 1fr}
-}
+/* Chart containers */
+.viz{ width:100%; min-height:320px; border-radius:10px; }
+.viz.donut{ min-height:260px; }
 
-.three-up{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 20px 0;
-}
+/* Optional text box under charts */
+.note{ margin:6px 0 0; color:#5e6773; font-size:.95rem; }
 
-/* Each column = chart + note */
-.chart-block{
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
+/* Responsive tweaks */
+@media (max-width: 1000px){
+  .viz{ min-height:300px }
 }
-
-/* Optional: make donut container a bit shorter */
-.vis-container.donut{ min-height: 300px; }
-
-/* Note box */
-.note-card{
-  background:#b6b5b5;
-  border:1px solid #b6b5b5;
-  border-radius:12px;
-  padding:12px 14px;
-  color:#000000;
-  font-size:0.95rem;
+@media (max-width: 720px){
+  .viz{ min-height:260px }
 }
-.note-card p{ margin:0; }
-/* ===== Avoid overriding external grids (e.g., Pure.css) ===== */
-/* Do not redefine .pure-g; use the custom grids above instead. */

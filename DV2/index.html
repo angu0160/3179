@@ -34,7 +34,7 @@
     </header>
 
 <main class="vis-box">
-    <section class="vis-box">
+    <section class="card">
         <p class="small-font" style="text-align: left">
           Migration has always been a big identity of Australia ever since the first European settlers, 
           the First Fleet in 1788 captained by Arthur Philip and are also made of convicts, soldiers and their families. 
@@ -42,49 +42,57 @@
     </section>
     
     <!-- Vis 1 -->
-    <section class="vis-box">
-      <div class="vis-box">
+    <section class="card map-box">
+      <h2>Orignias of Migrants</h2>
         <div id="vis1" class="viz"></div>
         <p>Above is a choropleth map depicting Australia’s overseas born population. The key regions are the United Kingdom, New Zealand, 
           the US and Canada being the main English speaking countries. In Asia, countries like China, India and the Philippines 
           and in Southeast Asia like Vietnam, Indonesia and Malaysia. Overall, the migration distribution has a predominant Asia Pacific 
           centred migration pattern signifying Australia’s strong diversity and cultural differences.</p>
-      </div>
+    </section>
   
     
      <!-- Vis 2,3,4-->
-  <div class="three-up">
+  <section class="flex-row donut-row">
+    <div class="card donut-card">
+      <h3>Migration Stream</h3>
     <div id="vis2" class="vis-container donut"></div>
-      <p>Australia’s migration profile highlights a skilled, diverse, and globally connected population. 
+      <p class="note">Australia’s migration profile highlights a skilled, diverse, and globally connected population. 
             Most new arrivals in 2023–24 entered through the Skill Stream, while the Family Stream came as the second most popular migration stream.</p>
   </div>
 
-  <div class="chart-block">
+  <div class="card donut-card">
+    <h3>Top Occupations</h3>
     <div id="vis3" class="vis-container donut"></div>
-      <p> The leading migrant occupations—such as registered nurses, accountants, software developers, and engineers which shows Australia’s 
+      <p class="note"> The leading migrant occupations such as registered nurses, accountants, software developers, and engineers which shows Australia’s 
             strong demand in healthcare, technology, and infrastructure sectors.</p>
   </div>
 
-  <div class="chark-block">
+  <div class="card donut-card">
+    <h3>Top languages spoken</h3>
     <div id="vis4" class="vis-container donut"></div>
-      <p>Linguistically, Australia remains highly multicultural, with Mandarin, Arabic, Vietnamese, Cantonese, Punjabi, Italian, and Greek 
+      <p class="note">Linguistically, Australia remains highly multicultural, with Mandarin, Arabic, Vietnamese, Cantonese, Punjabi, Italian, and Greek 
             among the top languages spoken at home other than English. Together, these trends demonstrate Australia’s reliance on skilled migration, 
             its expanding cultural diversity, and its deepening ties to the Asia-Pacific region.</p>
     </div>
+  </section>
 
     <!-- Vis 5 -->
-    <div class="vis-box">
+    <section class="flex-row bottom-row">
+      <div class="card viz-card">
+        <h3>Migrants by State Over Time</h3>
         <div id="vis5" class="vis-container"></div>
-        <p>explaination of area chart</p>
+        <p class="note">explaination of area chart</p>
     </div>
 
   <!-- Vis 6 -->
-    <div class="vis-box">
+    <div class="card viz-card">
+      <h3>Migrant age group Distribution</h3>
         <div id="vis6" class="vis-container"></div>
         <p>explaination of bar chart</p>
     </div>
     </section>
-
+  
   <script type="text/javascript">
     var specVis1 = "./migrant_origin.vl.json";
     var specVis2 = "./migration_type.vl.json";
