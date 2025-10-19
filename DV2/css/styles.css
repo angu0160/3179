@@ -49,6 +49,15 @@ h2{margin:0 0 12px}
   padding:12px;
 }
 
+.vis-box {
+  background: #ffffff;                /* white card background */
+  border: 1px solid #e7edf3;          /* subtle border */
+  border-radius: 12px;                /* rounded corners */
+  box-shadow: 0 6px 20px rgba(20,30,55,0.08); /* soft shadow */
+  padding: 20px;                      /* inner spacing */
+  margin: 20px 0;                     /* space between boxes */
+}
+
 /* ===== Inner Grids ===== */
 .card-grid{
   display:grid;
