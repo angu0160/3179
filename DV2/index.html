@@ -1,93 +1,68 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Data Vis 2</title>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-  <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-    <link rel="stylesheet"
-      href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-</head>
-  
 <body>
-
   <div class="grid-container">
-  
-  <header class="dash-header">
-  <div class="wrap">
-    <h1 style="text-align: center;">Migration in Australia</h1>
-    <p class="subtitle" style="text-align: center;"> An insight into Australia's migration pattern</p>
-    </div>
+
+    <!-- Header -->
+    <header class="card header">
+      <h1>Migration in Australia</h1>
+      <p class="note">An insight into Australia's migration pattern</p>
     </header>
 
+    <!-- Intro card ABOVE the map -->
     <section class="card intro">
       <h2>Overview</h2>
-        <p class="lede">
-          Migration has always been a big identity of Australia ever since the first European settlers, 
-          the First Fleet in 1788 captained by Arthur Philip and are also made of convicts, soldiers and their families. 
-           Now, the migration pattern has changed and migrants are coming from all over the world. </p>
+      <p class="lede">
+        Migration has always been a big identity of Australia ever since the first European settlers, the First Fleet in 1788…
+        Now, the migration pattern has changed and migrants are coming from all over the world.
+      </p>
     </section>
-    
-    <!-- Vis 1 -->
-    <div class="box" style="grid-area: box-1"></div>
+
+    <!-- HERO MAP -->
+    <section class="card hero">
       <h2>Origins of Migrants</h2>
-        <div id="vis1" class="viz"></div>
-        <p>Above is a choropleth map depicting Australia’s overseas born population. The key regions are the United Kingdom, New Zealand, 
-          the US and Canada being the main English speaking countries. In Asia, countries like China, India and the Philippines 
-          and in Southeast Asia like Vietnam, Indonesia and Malaysia. Overall, the migration distribution has a predominant Asia Pacific 
-          centred migration pattern signifying Australia’s strong diversity and cultural differences.</p>
-  
-    
-     <!-- Vis 2,3,4 (donut) -->
-  <div class="box" style="grid-area: box-2"></div>
+      <div id="vis1" class="viz"></div>
+      <p class="note" style="margin-top:10px">
+        Above is a choropleth map depicting Australia’s overseas-born population… (caption)
+      </p>
+    </section>
+
+    <!-- Donut 1 -->
+    <section class="card donut1">
       <h3>Migration Stream</h3>
-    <div id="vis2" class="vis-container donut"></div>
-      <p class="note">Australia’s migration profile highlights a skilled, diverse, and globally connected population. 
-            Most new arrivals in 2023–24 entered through the Skill Stream, while the Family Stream came as the second most popular migration stream.</p>
+      <div id="vis2" class="viz donut"></div>
+      <p class="note">Most new arrivals in 2023–24 entered via the Skill Stream; Family Stream is second.</p>
+    </section>
 
-  <div class="box" style="grid-area: box-3"></div>
-    <h3>Top Occupations</h3>
-    <div id="vis3" class="vis-container donut"></div>
-      <p class="note"> The leading migrant occupations such as registered nurses, accountants, software developers, and engineers which shows Australia’s 
-            strong demand in healthcare, technology, and infrastructure sectors.</p>
+    <!-- Donut 2 -->
+    <section class="card donut2">
+      <h3>Top Occupations</h3>
+      <div id="vis3" class="viz donut"></div>
+      <p class="note">Registered nurses, accountants, software developers, and engineers dominate.</p>
+    </section>
 
-  <div class="box" style="grid-area: box-4"></div>
-    <h3>Top languages spoken</h3>
-    <div id="vis4" class="vis-container donut"></div>
-      <p class="note">Linguistically, Australia remains highly multicultural, with Mandarin, Arabic, Vietnamese, Cantonese, Punjabi, Italian, and Greek 
-            among the top languages spoken at home other than English. Together, these trends demonstrate Australia’s reliance on skilled migration, 
-            its expanding cultural diversity, and its deepening ties to the Asia-Pacific region.</p>
+    <!-- Donut 3 -->
+    <section class="card donut3">
+      <h3>Top Languages Spoken</h3>
+      <div id="vis4" class="viz donut"></div>
+      <p class="note">Mandarin, Arabic, Vietnamese, Cantonese, Punjabi, Italian, and Greek are among the top languages.</p>
+    </section>
 
+    <!-- Viz 5 -->
+    <section class="card viz5">
+      <h3>Migrants by State Over Time</h3>
+      <div id="vis5" class="viz"></div>
+      <p class="note">Explanation of the area/line chart.</p>
+    </section>
 
-    <!-- Vis 5 -->
-    <<div class="box" style="grid-area: box-5"></div>
-        <h3>Migrants by State Over Time</h3>
-        <div id="vis5" class="vis-container"></div>
-        <p class="note">explaination of area chart</p>
+    <!-- Viz 6 -->
+    <section class="card viz6">
+      <h3>Migrant Age Group Distribution</h3>
+      <div id="vis6" class="viz"></div>
+      <p class="note">Explanation of the bar chart.</p>
+    </section>
 
-  <!-- Vis 6 -->
-    <div class="box" style="grid-area: box-6"></div>
-      <h3>Migrant age group Distribution</h3>
-        <div id="vis6" class="vis-container"></div>
-        <p>explaination of bar chart</p>
-    </div>
-  
-  <script type="text/javascript">
+  </div>
+
+  <script>
     var specVis1 = "./migrant_origin.vl.json";
     var specVis2 = "./migration_type.vl.json";
     var specVis3 = "./most_pop_jobs.vl.json";
@@ -95,12 +70,11 @@
     var specVis5 = "./migrants_per_state.vl.json";
     var specVis6 = "./mirgant_age_group.vl.json";
 
-    vegaEmbed('#vis1', specVis1, { "actions": false });
-    vegaEmbed('#vis2', specVis2, { "actions": false });
-    vegaEmbed('#vis3', specVis3, { "actions": false });
-    vegaEmbed('#vis4', specVis4, { "actions": false });
-    vegaEmbed('#vis5', specVis5, { "actions": false });
-    vegaEmbed('#vis6', specVis6, { "actions": false });
+    vegaEmbed('#vis1', specVis1, { actions:false });
+    vegaEmbed('#vis2', specVis2, { actions:false });
+    vegaEmbed('#vis3', specVis3, { actions:false });
+    vegaEmbed('#vis4', specVis4, { actions:false });
+    vegaEmbed('#vis5', specVis5, { actions:false });
+    vegaEmbed('#vis6', specVis6, { actions:false });
   </script>
 </body>
-</html>
