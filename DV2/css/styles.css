@@ -88,7 +88,6 @@ body{
   height: 100%;
 }
 
-
 /* Headings / notes */
 h2,h3{ margin:0 0 10px; }
 .note{ color:var(--muted); line-height:1.55; }
