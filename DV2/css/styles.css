@@ -75,6 +75,26 @@ body{
   gap: 18px;
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: 2fr 1px 1fr; /* middle column for divider */
+  align-items: start;
+  gap: 18px;
+}
+
+.divider {
+  background: #dcdfe5;   /* subtle grey */
+  width: 1px;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+  .divider { display: none; }
+}
+
 /* Headings / notes */
 h2,h3{ margin:0 0 10px; }
 .note{ color:var(--muted); line-height:1.55; }
