@@ -50,7 +50,8 @@
           "domain": [1, 100, 1000, 10000, 100000, 500000, 1000000],
           "range": ["#fff5eb", "#fee6ce", "#fdd0a2", "#fdae6b", "#fd8d3c", "#f16913", "#d94801", "#8c2d04"]
         },
-        "title": "Number of Migrants to Australia"
+        "title": "Number of Migrants to Australia",
+        "legend": {"format": ",", "labelFontSize": 10, "titleFontSize": 11}
       },
       "value": "#e5e7eb"
     },
