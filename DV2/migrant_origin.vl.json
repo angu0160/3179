@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 960,
+  "width": 1000,
   "height": 600,
   "projection": {"type": "equalEarth"},
   "data": {
@@ -50,7 +50,14 @@
           "range": ["#fff5eb", "#fee6ce", "#fdd0a2", "#fdae6b", "#fd8d3c", "#f16913", "#d94801", "#8c2d04"]
         },
         "title": "Number of Migrants to Australia",
-        "legend": {"format": ",", "labelFontSize": 10, "titleFontSize": 11}
+        "legend": {"format": ",", "labelFontSize": 10, "titleFontSize": 11,
+        "orient": "bottom-left",
+        "offset": 10,
+        "titleAlign":"left",
+        "direction": "horizontal", 
+        "titleAnchor": "start"
+        }
+        
       },
       "value": "#e5e7eb"
     },

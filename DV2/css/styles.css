@@ -70,20 +70,15 @@ main{
 .viz6        { grid-area: viz6; }
 .outro       { grid-area: outro; }
 
-/* Intro card tweaks */
+/* car header */
+.card.header
+
+/* card subtitles */
 .card h2 {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--ink);
-}
-
-.card.map .viz{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
 }
 
 /* chart + notes side by side (used for vis5 and vis6) */
