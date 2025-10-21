@@ -40,7 +40,7 @@
       "axis": {"title": "Number of Migrants"}
     },
     "color": {
-      "condition": {"param": "highlight", "value": "#C4A69B"},
+      "condition": {"param": "highlight", "value": "#938FB8"},
       "value": "grey"
     },
     "tooltip":[
