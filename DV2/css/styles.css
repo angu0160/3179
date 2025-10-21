@@ -75,7 +75,7 @@ main{
 
 /* Specific cards */
 .header      { grid-area: header; text-align:center; }
-.intro       { grid-area: intro; }
+.intro       { grid-area: intro; text-align:center;}
 .map         { grid-area: map; }
 .donut1      { grid-area: donut1; }
 .donut2      { grid-area: donut2; }
@@ -132,7 +132,7 @@ main{
 
 /* Headings / notes */
 h2,h3{ margin:0 0 10px; }
-.note{ color:var(--muted); line-height:1.55; }
+.note{ color:var(--ink); line-height:1.55; }
 
 /* Chart containers */
 .viz{ width:100%; min-height:300px; border-radius:12px; }
