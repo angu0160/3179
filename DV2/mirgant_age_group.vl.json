@@ -26,12 +26,13 @@
       }
     }
   ],
-  "mark": {"type": "bar", "tooltip": true},
+  "mark": {"type": "bar"},
   "encoding": {
     "x": {
       "field": "category",
       "type": "nominal",
-      "axis": {"title": "Age Group"}
+      "axis": {"title": "Age Group",
+      "labelAngle": 0}
     },
     "y": {
       "field": "amount",
@@ -41,7 +42,11 @@
     "color": {
       "condition": {"param": "highlight", "value": "steelblue"},
       "value": "grey"
-    }
+    },
+    "tooltip":[
+      {"field":"category", "type": "nominal", "title": "Age Group"},
+      {"field": "amount","type":"quantitative", "title":"No. of migrants","format": ","}
+    ]
   },
   "config": {
     "bar": {"binSpacing": 0},
