@@ -71,12 +71,19 @@ main{
 .outro       { grid-area: outro; }
 
 /* Intro card tweaks */
-.card.intro h2{ margin:0 0 6px; font-size:1.1rem; }
-.card.intro .lede{
-  margin:0;
-  color:var(--muted);
-  line-height:1.55;
-  text-align:center;
+.card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.card.map .viz{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* chart + notes side by side (used for vis5 and vis6) */
