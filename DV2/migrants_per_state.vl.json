@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": "Migrant in each state by year",
+  "title": "Migrantion in each state by year",
   "width": 600,
   "height": 350,
   "data": {
