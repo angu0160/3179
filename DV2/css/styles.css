@@ -11,7 +11,6 @@
   --font:'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 /* Base */
-html, body{height: 100%;}
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -24,7 +23,6 @@ body{
 
 /* Grid shell */
 .grid-container{
-  width: min(var(--max), 100%);
   max-width: var(--max);
   margin: 24px auto 60px;
   padding: 0 20px;
