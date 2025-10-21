@@ -31,13 +31,13 @@
           "type": "nominal",
           "scale": {
             "domain": [
-              "Greek",
-              "Italian",
-              "Arabic",
-              "Punjabi",
-              "Vietnamese",
               "Mandarin",
-              "Cantonese"
+              "Arabic",
+              "Vietnamese",
+              "Cantonese",
+              "Punjabi",
+              "Greek",
+              "Italian"
             ],
             "range": [
               "#7fc97f",
