@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": "Migrant in each state by year",
-  "width": 500,
-  "height": 300,
+  "width": 600,
+  "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/angu0160/3179/main/DV2/data/migration%20by%20state.csv"
   },
@@ -42,13 +42,23 @@
   ],
   "layer": [
     {
-      "mark": "area",
+      "mark": {
+        "type":"area",
+        "interpolate": "monotone",
+        "opacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 0.6
+      },
       "encoding": {
         "x": {
           "timeUnit": "year",
           "field": "Year",
-          "type": "quantitative",
-          "axis": {"format": "%Y"}
+          "type": "temporal",
+          "axis": {"format": "%Y", "title": "Year"},
+          "scale":{
+            "domain": [ { "year": 2004 }, { "year": 2023 } ],
+          "nice": false
+          }
         },
         "y": {
           "aggregate": "sum",
@@ -59,7 +69,7 @@
         "color": {
           "field": "State/Territory",
           "type": "nominal",
-          "scale": {"scheme": "category20b"},
+          "scale": {"scheme": "tableau10"},
           "title": "State/Territory"
         },
         "tooltip": [
@@ -85,30 +95,30 @@
         ]
       }
     },
-    {
-      "transform": [
-        {"filter": "indexof([2004, 2022, 2023], year(datum.Year)) >= 0"}
-      ],
-      "mark": {
-        "type": "text",
-        "dy": -10,
-        "fontSize": 11,
-        "fontWeight": "normal",
-        "stroke": "black",
-        "strokeWidth": 0.5
-      },
-      "encoding": {
-        "x": {"timeUnit": "year", "field": "Year", "type": "quantitative"},
-        "y": {"aggregate": "sum", "field": "Migrants", "type": "quantitative"},
-        "text": {
-          "field": "Year",
-          "type": "temporal",
-          "timeUnit": "year",
-          "format": "%Y"
-        },
-        "color": {"value": "black"}
-      }
+     {
+    "data": { "values": [ { "date": "2020-01-01" } ] },
+    "mark": { "type": "rule", "strokeDash": [5, 5], "color": "#f80202", "strokeWidth": 1.5 },
+    "encoding": {
+      "x": { "field": "date", "type": "temporal", "timeUnit": "year" }
     }
+  },
+  {
+    "data": { "values": [ { "date": "2020-01-01", "label": "COVID-19 border closures" } ] },
+    "mark": {
+      "type": "text",
+      "align": "right",
+      "dx": -7,
+      "dy": 25,
+      "fontSize": 12,
+      "fontWeight": "bold",
+      "color": "#f80202"
+    },
+    "encoding": {
+      "x": { "field": "date", "type": "temporal", "timeUnit": "year" },
+      "y": { "value": 0 },
+      "text": { "field": "label" }
+    }
+  }
   ],
   "config": {}
 }

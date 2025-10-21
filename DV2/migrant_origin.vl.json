@@ -17,7 +17,7 @@
         "input": "select",
         "options": [null, "Top20Countries"],
         "labels": ["Show all", "Top 20 Countries"],
-        "name": "Top Country of Origins"
+        "name": "Countries of Origins: "
       }
     }
   ],
