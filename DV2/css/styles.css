@@ -2,7 +2,6 @@
   --bg:#eef2f6;
   --card:#fff;
   --ink:#1e2732;
-  --muted:#6a7480;
   --ring:#e7edf3;
   --shadow:0 8px 28px rgba(20,30,55,.08);
   --r:14px;
@@ -128,6 +127,10 @@ main{
   background: #dcdfe5;
   width: 2px;
   height: 100%;
+}
+
+.card.outro{
+  font-size: 8px;
 }
 
 /* Headings / notes */
