@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Top 7 langauges spoken at home in Australia excludign english 2021",
-  "width": 150,
-  "height": 150,
+  "width": 250,
+  "height": 250,
   "data": {
     "values": [
       {"category": "Greek", "value": 229643},
@@ -14,9 +14,16 @@
       {"category": "Cantonese", "value": 295281}
     ]
   },
+  "params": [
+    {
+      "name": "lang_highlight",
+      "select": { "type": "point", "fields": ["category"] },
+      "bind": "legend"
+    }
+  ],
   "layer": [
     {
-      "mark": {"type": "arc", "innerRadius": 100},
+      "mark": {"type": "arc", "innerRadius": 100, "cornerRadius": 5},
       "encoding": {
         "theta": {"field": "value", "type": "quantitative"},
         "color": {
@@ -42,7 +49,15 @@
               "#bf5b17"
             ]
           },
-          "legend": {"title": "Langauges"}
+          "legend": {"title": "Langauges",
+          "labelFontSize": 11,
+          "titleFontSize": 12,
+          "titleFontWeight": "bold"
+        }
+        },
+        "opacity": {
+          "condition": { "param": "lang_highlight", "value": 1 },
+          "value": 0.25
         },
         "tooltip": [
           {"field": "category", "type": "nominal", "title": "Language"},

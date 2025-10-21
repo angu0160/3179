@@ -1,28 +1,35 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Top 10 Migrant Occupations in Australia 2023-24",
-  "width": 150,
-  "height": 150,
+  "width": 250,
+  "height": 250,
   "data": {
     "values": [
       {"category": "Registered Nurse", "value": 9813},
       {"category": "Accountants", "value": 4570},
-      {"category": "Software and Applications Programmer", "value": 4243},
+      {"category": "Software & App Devs", "value": 4243},
       {"category": "Chefs", "value": 3957},
       {
-        "category": "Industrial, Mechanical and Production Engineers",
+        "category": "Indust., Mech. & Prod. Engrs",
         "value": 2509
       },
-      {"category": "Civil Engineering Professionals", "value": 2380},
-      {"category": "ICT Business and Systems Analysts", "value": 2232},
-      {"category": "Other Engineering Professions", "value": 1556},
+      {"category": "Civil Engrs Professionals", "value": 2380},
+      {"category": "ICT Analysts", "value": 2232},
+      {"category": "Other Engr Professions", "value": 1556},
       {"category": "Early Childhood Teachers", "value": 1429},
       {"category": "Motor Mechanics", "value": 1319}
     ]
   },
+   "params": [
+    {
+      "name": "job_highlight",
+      "select": { "type": "point", "fields": ["category"] },
+      "bind": "legend"
+    }
+   ],
   "layer": [
     {
-      "mark": {"type": "arc", "innerRadius": 100},
+      "mark": {"type": "arc", "innerRadius": 100, "cornerRadius": 5},
       "encoding": {
         "theta": {"field": "value", "type": "quantitative"},
         "color": {
@@ -32,29 +39,36 @@
             "domain": [
               "Registered Nurse",
               "Accountants",
-              "Software and Applications Programmer",
+              "Software & App Devs",
               "Chefs",
-              "Industrial, Mechanical and Production Engineers",
-              "Civil Engineering Professionals",
-              "ICT Business and Systems Analysts",
-              "Other Engineering Professions",
+              "Indust., Mech. & Prod. Engrs",
+              "Civil Engrs Professionals",
+              "ICT Analysts",
+              "Other Engr Professions",
               "Early Childhood Teachers",
               "Motor Mechanics"
             ],
             "range": [
-              "#8dd3c7",
-              "#ffffb3",
-              "#bebada",
-              "#fb8072",
-              "#80b1d3",
-              "#fdb462",
-              "#b3de69",
-              "#fccde5",
-              "#d9d9d9",
-              "#bc80bd"
+              "#a6cee3",
+              "#1f78b4",
+              "#b2df8a",
+              "#33a02c",
+              "#fb9a99",
+              "#e31a1c",
+              "#fdbf6f",
+              "#ff7f00",
+              "#cab2d6",
+              "#6a3d9a"
             ]
           },
-          "legend": {"title": "Occupations"}
+          "legend": {"title": "Occupations","labelFontSize":9,
+          "titleFontSize": 12,
+          "titleFontWeight": "bold"
+        }
+        },
+        "opacity": {
+          "condition": { "param": "job_highlight", "value": 1 },
+          "value": 0.25
         },
         "tooltip": [
           {"field": "category", "type": "nominal", "title": "Occupantion"},
