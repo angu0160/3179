@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Original Birth Place of Australian Citizens",
   "width": 960,
   "height": 600,
   "projection": {"type": "equalEarth"},
