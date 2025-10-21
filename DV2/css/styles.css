@@ -10,18 +10,21 @@
   --max:1100px;
   --font:'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
-
 /* Base */
+html, body{height: 100%;}
 *{box-sizing:border-box}
 body{
   margin:0;
   color:var(--ink);
   font-family:var(--font);
   background:var(--bg);
+  display: flex;
+  justify-content: center;
 }
 
 /* Grid shell */
 .grid-container{
+  width: min(var(--max), 100%);
   max-width: var(--max);
   margin: 24px auto 60px;
   padding: 0 20px;
@@ -32,10 +35,11 @@ body{
   grid-template-areas:
     "header  header  header"
     "intro   intro   intro"
-    "hero    hero    hero"
+    "map     map     map"
     "donut1  donut2  donut3"
     "viz5    viz5    viz5"
-    "viz6    viz6    viz6";
+    "viz6    viz6    viz6"
+    "outro   outro   outro";
 }
 
 /* Cards */
@@ -50,12 +54,13 @@ body{
 /* Specific cards */
 .header      { grid-area: header; text-align:center; }
 .intro       { grid-area: intro; }
-.hero        { grid-area: hero; }
+.map         { grid-area: map; }
 .donut1      { grid-area: donut1; }
 .donut2      { grid-area: donut2; }
 .donut3      { grid-area: donut3; }
 .viz5        { grid-area: viz5; }
 .viz6        { grid-area: viz6; }
+.outro       { grid-area: outro; }
 
 /* Intro card tweaks */
 .card.intro h2{ margin:0 0 6px; font-size:1.1rem; }
