@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Migrants in Australia by age group",
   "width": 600,
   "height": 350,
   "data": {
